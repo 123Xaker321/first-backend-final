@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="../css/post.css">
+</head>
+<body>
+    <div id="wrap">
+            <%- include('./partials/nav.ejs') %>
+            <div class="post_container">
+                <div class="info">
+                    <span>Дата публікації: <%= post.createdAt.toLocaleDateString() %></span>
+                    <span>Автор: <%= post.author %></span>
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h1><%= post.title %></h1>
+                    </div>
+                    <div class="text">
+                        <p><%= post.text %></p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

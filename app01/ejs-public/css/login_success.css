@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap");
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    background-image: url(../Images/bgc.png);
+}
+h1{
+    font-size: calc(100vw / 10);
+    font-family: "Montserrat", sans-serif;
+}

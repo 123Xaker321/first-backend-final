@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="./css/registration.css" />
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <h1>Реєстрація</h1>
+    <form method="post" action="/registration" id="flex_container">
+      <div id="email_container">
+        <input
+          type="email"
+          required="required"
+          id="email"
+          name="login"
+          placeholder="Введіть свою електронну пошту"
+        />
+      </div>
+      <div id="password_container">
+        <input
+          type="password"
+          required="required"
+          id="pass"
+          name="password"
+          placeholder="Придумайте надійний пароль"
+        />
+      </div>
+      <div id="checkbox_container"><label for="RememberMe">Запам'ятати мене</label><input type="checkbox" name="RememberMe" id="checkbox"></div>
+      <button type="submit">Надіслати</button>
+    </form>
+  </body>
+</html>

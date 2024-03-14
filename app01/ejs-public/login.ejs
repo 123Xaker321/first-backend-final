@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1>Логін</h1>
+    <form method="post" action="/login" id="flex_container">
+        <div id="email_container">
+            <input type="email" required="required" id="email" placeholder="Введіть свою електронну пошту" name="login">
+        </div>
+        <div id="password_container">
+            <input type="password" required="required" id="pass" placeholder="Введіть пароль" name="password">
+        </div>
+        <div id="checkbox_container"><label for="RememberMe">Запам'ятати мене</label><input type="checkbox" name="RememberMe" id="checkbox"></div>
+        <button type="submit">Надіслати</button>
+    </form>
+</body>
+</html>

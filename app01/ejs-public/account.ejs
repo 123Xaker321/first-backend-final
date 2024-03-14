@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="./css/account.css" />
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %> <% if(!req.session ||
+    req.session.user){ %>
+    <div id="content">
+      <h2>Ви зареєстровані!</h2>
+      <h3>Ім'я: <%= req.session.user.username %></h3>
+      <h3>Електронна пошта: <%= req.session.user.login %></h3>
+    </div>
+    <div id="btns">
+      <form method="post" action="/logout">
+        <button type="submit">Вийти з акаунту</button>
+      </form>
+      <form method="post" action="/delete">
+        <button type="submit">Видалити цей акаунт</button>
+      </form>
+      <form method="get" action="/edit-account">
+      <button type="submit" class="btn-change">Змінити дані акаунту</button>
+      </form>
+    </div>
+    <% } %> <% if(!(!req.session || req.session.user)){ %>
+    <div id="content">
+      <h1>Ви не зареєстровані</h1>
+    </div>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="./css/posts.css" />
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %> 
+    <% if (posts.length == 0) { %>
+    <h1 id="post0">Постів поки що немає, чи не бажаєте створити пост?</h1>
+    <% } %>
+    <ul>
+      <% if (posts.length) { %> <% posts.forEach(({ id, title, createdAt, text,
+      author}) => { %>
+      <li>
+        <article>
+          <h2><%= title %></h2>
+          <p><%= text %></p>
+          <a href="/posts/<%= id %>" id="post_href">Перейти до посту</a>
+          <hr />
+          <div class="info">
+            <span><%= createdAt.toLocaleDateString() %></span>
+            <span>Автор посту: <%= author %></span>
+          </div>
+        </article>
+      </li>
+      <% }) %> 
+      <% } %>
+    </ul>
+  </body>
+</html>

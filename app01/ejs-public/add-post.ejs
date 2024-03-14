@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="./css/add-post.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1>Введіть назву і текст посту</h1>
+    <form id="post-form" method="post" action="/add-post">
+        <div class="form-title">
+                <input type="text" pattern=".{1-46}" name="title" placeholder="Введіть назву посту" required="required">
+        </div>
+        <div class="form-text">
+                <textarea name="text" placeholder="Введіть текст посту" required="required"></textarea>
+        </div>
+        <button type="submit">Надіслати</button>
+    </form>
+</body>
+</html>

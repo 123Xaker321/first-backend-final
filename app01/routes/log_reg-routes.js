@@ -1,0 +1,18 @@
+const express = require('express');
+const router = express.Router();
+const { handleError } = require('../controllers/error-controller');
+const { postDelete, getDelete, getEditAcc, getLogsuccess, getLog, getRegsuccess, postReg, getReg, postLog, getAcc, getLogout, postLogout, postEditAcc } = require('../controllers/log_reg-controller');
+router.get('/login_success', getLogsuccess);
+router.get('/registration_success', getRegsuccess);
+router.post('/login', postLog);
+router.get('/login', getLog);
+router.post('/registration', postReg);
+router.get('/registration', getReg);
+router.get('/account', getAcc);
+router.post('/logout', postLogout);
+router.get('/logout', getLogout);
+router.get('/edit-account', getEditAcc);
+router.post('/edit-account', postEditAcc);
+router.get('/delete', getDelete);
+router.post('/delete', postDelete);
+module.exports = router;

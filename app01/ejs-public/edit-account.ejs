@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js сервер | <%= title %></title>
+    <link rel="stylesheet" href="./css/edit-account.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <% if(!req.session || req.session.user){ %>
+    <div id="content">
+        <h2>Змінення даних</h2>
+        
+    <form id="post-form" method="post" action="/edit-account"><input type="text" name="name" value="<%= req.session.user.username %>"></input><button class="btn-change" type="submit">Змінити дані акаунту</button></form></div>
+    <% } %>
+    <% if(!(!req.session || req.session.user)){ %>
+        <div id="content">
+            <h1>Ви не зареєстровані</h1>
+        </div>
+        <% } %>
+</body>
+</html>
